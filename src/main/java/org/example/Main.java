@@ -95,9 +95,9 @@ public class Main {
 }
 
 //References:
-//[1] Amazon Web Services, "Amazon Web Services (AWS) - Cloud Computing Services," 2023. [Online]. Available: https://aws.amazon.com/. [Accessed 1 June 2023].
-//[2] Amazon Web Services, "Interface S3Client," 2023. [Online]. Available: https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/s3/S3Client.html. [Accessed 3 June 2023].
-//[3] Amazon Web Services, "Class CreateBucketRequest," 2023. [Online]. Available: https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/s3/model/CreateBucketRequest.html. [Accessed 03 June 2023].
-//[4] Amazon Web Services, "Class PutObjectRequest," 2023. [Online]. Available: https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/s3/model/PutObjectRequest.html. [Accessed 03 June 2023].
+//[1] Amazon Web Services, Inc., "Amazon Web Services (AWS) - Cloud Computing Services," 2023. [Online]. Available: https://aws.amazon.com/. [Accessed 1 June 2023].
+//[2] Amazon Web Services, Inc., "Interface S3Client," 2023. [Online]. Available: https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/s3/S3Client.html. [Accessed 3 June 2023].
+//[3] Amazon Web Services, Inc., "Class CreateBucketRequest," 2023. [Online]. Available: https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/s3/model/CreateBucketRequest.html. [Accessed 03 June 2023].
+//[4] Amazon Web Services, Inc., "Class PutObjectRequest," 2023. [Online]. Available: https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/s3/model/PutObjectRequest.html. [Accessed 03 June 2023].
 //[5] CodeJava.net, "AWS Java SDK S3 Delete Objects Examples," 2023. [Online]. Available: https://www.codejava.net/aws/delete-s3-objects-examples. [Accessed 03 June 2023].
 //[6] CodeJava.net, "AWS Java SDK S3 Delete Buckets Examples," 2023. [Online]. Available: https://www.codejava.net/aws/delete-buckets-examples. [Accessed 03 June 2023].
