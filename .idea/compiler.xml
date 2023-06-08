@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Assignment_Code" />
         <module name="S3_Assignment" />
         <module name="csci5410-summer-23-b00934548" />
       </profile>
