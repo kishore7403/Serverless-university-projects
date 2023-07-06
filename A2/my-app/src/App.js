@@ -13,10 +13,14 @@ const App = () => {
           <Route path="/signup" element={<SignUpForm />} />
           <Route path="/signin" element={<SignInForm />} />
           <Route path="/dashboard" element={<DashboardPage />} />
-        </Routes>
+        </Routes> 
+        {/* [1] */}
       </div>
     // </Router>
   );
 };
 
 export default App;
+
+//References
+//[1] 	Remix Software, Inc., "<Routes>," Remix Software, Inc., [Online]. Available: https://reactrouter.com/en/main/components/routes. [Accessed 04 July 2023].
