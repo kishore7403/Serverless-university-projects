@@ -40,7 +40,7 @@ public class Main {
 
 
     public static void main(String[] args) {
-        String bucketName = "b00934548-bucket";
+        String bucketName = "b00934548-bucket-124";
         Region region = Region.US_EAST_1;
         S3Client s3Client = createS3Client(region); //[2]
         Scanner scanner = new Scanner(System.in);
