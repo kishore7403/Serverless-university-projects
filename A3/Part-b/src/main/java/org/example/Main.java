@@ -50,6 +50,7 @@ public class Main {
         String secondbucketName = "tagsb00934548";
         createBucket(s3Client, secondbucketName); //[2]
 
+
         String directoryPath="C:\\Users\\AVuser\\Desktop\\csci5410-summer-23-b00934548\\A3\\Part-b\\tech";
 
         File directory = new File(directoryPath);
@@ -60,7 +61,7 @@ public class Main {
                 if (file.isFile()) {
                     uploadFile(s3Client, firstbucketName, file.getAbsolutePath(), file.getName()); //[2]
                     try {
-                        TimeUnit.MILLISECONDS.sleep(100); // Delay for 100 milliseconds //
+                        TimeUnit.MILLISECONDS.sleep(100); // Delay for 100 milliseconds // [7]
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -78,3 +79,4 @@ public class Main {
 //[4] Amazon Web Services, Inc., "Class PutObjectRequest," Amazon Web Services, Inc., 2023. [Online]. Available: https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/s3/model/PutObjectRequest.html. [Accessed 03 June 2023].
 //[5] N. H. Minh, "AWS Java SDK S3 Delete Objects Examples," CodeJava.net, 2023. [Online]. Available: https://www.codejava.net/aws/delete-s3-objects-examples. [Accessed 03 June 2023].
 //[6] N. H. Minh, "AWS Java SDK S3 Delete Buckets Examples," CodeJava.net, 2023. [Online]. Available: https://www.codejava.net/aws/delete-buckets-examples. [Accessed 03 June 2023].
+//[7] 	Oracle, "Enum TimeUnit," Oracle, 2023. [Online]. Available: https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/TimeUnit.html. [Accessed 07 July 2023].
