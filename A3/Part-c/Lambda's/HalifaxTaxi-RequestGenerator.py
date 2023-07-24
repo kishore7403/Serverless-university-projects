@@ -18,7 +18,7 @@ def lambda_handler(event, context):
     
     message_json = json.dumps(message_dict)     #[3]
     
-    sns_client = boto3.client('sns')            #[3]
+    sns_client = boto3.client('sns')            #[2]
     
     response = sns_client.publish(              #[4]
         TopicArn=topic_arn,

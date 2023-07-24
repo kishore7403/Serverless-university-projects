@@ -42,17 +42,18 @@ def lambda_handler(event, context):
         )
         
         receipt_handle = message['ReceiptHandle']
-        sqs_client.delete_message(
+        sqs_client.delete_message(              # [5]
             QueueUrl=queue_url,
             ReceiptHandle=receipt_handle
         )
  
     return {
         'statusCode': 200,
-        'body': json.dumps('Email')
+        'body': json.dumps('Email')             #[1]
     }
 # References
 # [1] Python Software Foundation, "json," Python Software Foundation, 2023. [Online]. Available: https://docs.python.org/3/library/json.html. [Accessed 20 Kuly 2023].
 # [2] Amazon Web Services, Inc, "Boto3 documentation," Amazon Web Services, Inc, 2023. [Online]. Available: https://boto3.amazonaws.com/v1/documentation/api/latest/index.html. [Accessed 20 July 2023].
-# [3]Amazon Web Services, Inc., "Publish," Amazon Web Services, Inc., 2023. [Online]. Available: https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns/client/publish.html. [Accessed 20 July 2023].
+# [3] Amazon Web Services, Inc., "Publish," Amazon Web Services, Inc., 2023. [Online]. Available: https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns/client/publish.html. [Accessed 20 July 2023].
 # [4] Amazon Web Services, Inc. , "Put an item in a DynamoDB table using an AWS SDK," Amazon Web Services, Inc. , 2023. [Online]. Available: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/example_dynamodb_PutItem_section.html. [Accessed 20 July 2023].
+# [5] Amazon Web Services, Inc, "delete_message," Amazon Web Services, Inc, 2023. [Online]. Available: https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sqs/client/delete_message.html. [Accessed 20 July 2023].

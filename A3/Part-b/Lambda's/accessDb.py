@@ -10,7 +10,7 @@ def lambda_handler(event, context):
     file_key = event['Records'][0]['s3']['object']['key']
 
  
-    response = s3.get_object(Bucket=bucket_name, Key=file_key)
+    response = s3.get_object(Bucket=bucket_name, Key=file_key)  #[4]
     file_content = response['Body'].read().decode('utf-8')
 
     data = json.loads(file_content)         #[1]
@@ -18,7 +18,7 @@ def lambda_handler(event, context):
 
     for key, value in data.items():
         for entity, count in value.items():
-            dynamodb.put_item(              #[4]
+            dynamodb.put_item(              #[5]
                 TableName='outputTable',
                 Item={
                     'key': {'S': entity},
@@ -32,4 +32,5 @@ def lambda_handler(event, context):
 # [1] Amazon Web Services, Inc, "Boto3 documentation," Amazon Web Services, Inc, 2023. [Online]. Available: https://boto3.amazonaws.com/v1/documentation/api/latest/index.html. [Accessed 20 July 2023].
 # [2] Python Software Foundation, "json," Python Software Foundation, 2023. [Online]. Available: https://docs.python.org/3/library/json.html. [Accessed 20 Kuly 2023].
 # [3] Amazon Web Services, Inc, "Client," Amazon Web Services, Inc, 2023. [Online]. Available: https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html. [Accessed 23 July 2023].
-# [4] Amazon Web Services, Inc, "put_item," Amazon Web Services, Inc, 2023. [Online]. Available: https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb/client/put_item.html. [Accessed 20 July 2023].
+# [4] Amazon Web Services, Inc, "get_object," Amazon Web Services, Inc, 2023. [Online]. Available: https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3/client/get_object.html. [Accessed 21 July 2023].
+# [5] Amazon Web Services, Inc, "put_item," Amazon Web Services, Inc, 2023. [Online]. Available: https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb/client/put_item.html. [Accessed 20 July 2023].

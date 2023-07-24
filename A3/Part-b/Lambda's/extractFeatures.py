@@ -11,18 +11,18 @@ def lambda_handler(event, context):
     text = response['Body'].read().decode('utf-8')
 
     pattern = r'\b[A-Z][A-Za-z]+\b'
-    named_entities = re.findall(pattern, text)
+    named_entities = re.findall(pattern, text)                      #[1]      
 
     named_entities_count = {}
     for entity in named_entities:
         named_entities_count[entity] = named_entities_count.get(entity, 0) + 1
 
     output_dict = {file_key[:-4] + 'ne': named_entities_count}
-    output_text = json.dumps(output_dict)
+    output_text = json.dumps(output_dict)                           #[2]
 
     target_bucket = 'tagsb00934548'
     target_key = file_key[:-4] + 'ne.txt'  
-    s3.put_object(Body=output_text, Bucket=target_bucket, Key=target_key)
+    s3.put_object(Body=output_text, Bucket=target_bucket, Key=target_key)    # [6]
 
     print(output_dict)
 
@@ -34,3 +34,4 @@ def lambda_handler(event, context):
 # [3] Amazon Web Services, Inc, "Boto3 documentation," Amazon Web Services, Inc, 2023. [Online]. Available: https://boto3.amazonaws.com/v1/documentation/api/latest/index.html. [Accessed 20 July 2023].
 # [4] Amazon Web Services, Inc, "Client," Amazon Web Services, Inc, 2023. [Online]. Available: https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html. [Accessed 23 July 2023].
 # [5] Amazon Web Services, Inc, "get_object," Amazon Web Services, Inc, 2023. [Online]. Available: https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3/client/get_object.html. [Accessed 21 July 2023].
+# [6] Amazon Web Services, Inc, "put_object," Amazon Web Services, Inc, 2023. [Online]. Available: https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3/client/put_object.html. [Accessed 24 July 2023].
